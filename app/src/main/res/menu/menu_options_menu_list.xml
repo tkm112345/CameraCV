@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuListOptionColor"
+        app:showAsAction="never"
+        android:title="@string/Color"/>
+    <item
+        android:id="@+id/menuListOptionGray"
+        app:showAsAction="never"
+        android:title="@string/Gray"/>
+    <!-- item
+        android:id="@+id/menuListOptionColorBitwise"
+        app:showAsAction="never"
+        android:title="@string/ColorBitwise"/ -->
+    <item
+        android:id="@+id/menuListOptionGrayBitwise"
+        app:showAsAction="never"
+        android:title="@string/GrayBitwise"/>
+    <item
+        android:id="@+id/menuListOptionBinalization"
+        app:showAsAction="never"
+        android:title="@string/Binalization"/>
+    <item
+        android:id="@+id/menuListOptionGaussianBlur"
+        app:showAsAction="never"
+        android:title="@string/GaussianBlur"/>
+    <item
+        android:id="@+id/menuListOptionMedianBlur"
+        app:showAsAction="never"
+        android:title="@string/MedianBlur"/>
+    <item
+        android:id="@+id/menuListOptionBilateralFilter"
+        app:showAsAction="never"
+        android:title="@string/BilateralFilter"/>
+    <item
+        android:id="@+id/menuListOptionBoxFilter"
+        app:showAsAction="never"
+        android:title="@string/BoxFilter"/>
+    <item
+        android:id="@+id/menuListOptionDetection"
+        android:title="@string/name_detection"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuListOptionParameter"
+        app:showAsAction="never"
+        android:title="@string/Parameter"/>
+    <item
+        android:id="@+id/menuListOptionCombination"
+        android:title="@string/name_combination"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuListOptionHelp"
+        android:title="@string/Help"
+        app:showAsAction="never" />
+
+
+</menu>

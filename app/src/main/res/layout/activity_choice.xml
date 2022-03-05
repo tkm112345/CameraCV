@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:orientation="horizontal"
+    tools:context=".ChoiceActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E5D090"
+        tools:context=".ChoiceActivity">
+
+        <RadioGroup
+            android:id="@+id/RadioGroupGaussian"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonGaussianOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/radioButtonGaussianOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:onClick="onRadiobuttonGaussianClicked"
+                android:text="@string/name_RadioButtonOn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <RadioButton
+                android:id="@+id/radioButtonGaussianOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:onClick="onRadiobuttonGaussianClicked"
+                android:text="@string/name_RadioButtonOff"
+                app:layout_constraintStart_toEndOf="@+id/radioButtonGaussianOn"
+                app:layout_constraintTop_toTopOf="@+id/radioButtonGaussianOn" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/GaussianBlur"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/MedianBlur"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupMedian"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:checkedButton="@id/radioButtonMedianOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+            <RadioButton
+                android:id="@+id/radioButtonMedianOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:onClick="onRadiobuttonMedianClicked"
+                android:text="@string/name_RadioButtonOn" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMedianOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:onClick="onRadiobuttonMedianClicked"
+                android:text="@string/name_RadioButtonOff" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/BoxFilter"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupGaussian" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupBox"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonBoxOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+            <RadioButton
+                android:id="@+id/radioButtonBoxOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBoxClicked"
+                android:text="@string/name_RadioButtonOn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBoxOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBoxClicked"
+                android:text="@string/name_RadioButtonOff" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/BilateralFilter"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/RadioGroupMedian"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupMedian" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupBilateral"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonBilateralOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+            <RadioButton
+                android:id="@+id/radioButtonBilateralOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBilateralClicked"
+                android:text="@string/name_RadioButtonOn" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBilateralOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBilateralClicked"
+                android:text="@string/name_RadioButtonOff" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/Binalization"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/RadioGroupBox"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupBox" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupBinalization"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonBinalizationOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@+id/textView20">
+
+            <RadioButton
+                android:id="@+id/radioButtonBinalizationOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:onClick="onRadiobuttonBinalizationClicked"
+                android:text="@string/name_RadioButtonOn"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBinalizationOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:onClick="onRadiobuttonBinalizationClicked"
+                android:text="@string/name_RadioButtonOff" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/name_Bitwise"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/RadioGroupBilateral"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupBilateral" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupBitwiseGray"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonBitwiseGrayOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toBottomOf="@+id/textView23">
+
+            <RadioButton
+                android:id="@+id/radioButtonBitwiseGrayOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBitwizeGrayClicked"
+                android:text="@string/name_RadioButtonOn" />
+
+            <RadioButton
+                android:id="@+id/radioButtonBitwiseGrayOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonBitwizeGrayClicked"
+                android:text="@string/name_RadioButtonOff" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/name_detection"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/RadioGroupBinalization"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupBinalization" />
+
+        <RadioGroup
+            android:id="@+id/RadioGroupDetection"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:checkedButton="@id/radioButtonDetectionOff"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/textView24">
+
+            <RadioButton
+                android:id="@+id/radioButtonDetectionOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonDetectionClicked"
+                android:text="@string/name_RadioButtonOn"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDetectionOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_weight="1"
+                android:onClick="onRadiobuttonDetectionClicked"
+                android:text="@string/name_RadioButtonOff"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:onClick="onClicked"
+            android:text="@string/name_ChoiceButton"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonReset"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/RadioGroupDetection" />
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:onClick="onResetClicked"
+            android:text="@string/name_Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonGo"
+            app:layout_constraintTop_toTopOf="@+id/buttonGo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
